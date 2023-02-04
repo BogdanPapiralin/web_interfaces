@@ -48,6 +48,7 @@ public partial class BookContext : DbContext
             entity.Property(e => e.Types)
                 .HasMaxLength(50)
                 .HasColumnName("types");
+            entity.Property(e => e.Years).HasColumnName("years");
         });
 
         modelBuilder.Entity<Order>(entity =>

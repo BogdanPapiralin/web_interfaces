@@ -19,9 +19,11 @@ public partial class Book
 
     public int Stock { get; set; }
 
-    public byte[] Image { get; set; } = null!;
+    public byte[]? Image { get; set; }
 
     public int Pages { get; set; }
+
+    public int? Years { get; set; }
 
     public virtual ICollection<Order> Orders { get; } = new List<Order>();
 }
