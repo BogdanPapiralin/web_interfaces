@@ -1,0 +1,261 @@
+body{
+    background-image: url("background.jpg");
+    background-size: 100% 100%;
+    height: 658px;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+.header{
+   background: linear-gradient(to right, rgb(77,47,45), 30%, rgb(121,102,87));
+   width: 100%;
+   height: 12%;
+   margin-top: 0;
+  
+}
+.header a{
+    text-decoration: none;
+    color: white;
+}
+.header h1{
+    display: inline-block;
+    color: white;
+    margin-left: 1%;
+}
+.header ul{
+    display: inline-block;
+
+}
+.header li{
+    display: inline-block;
+    list-style: none;
+    width: 30%;
+    font-size: 1.3em;
+    color: rgb(255, 255, 255, 0.8);
+}
+.registrButtons{
+    margin-left: 3%;
+    width: 20%;
+    text-align: right;
+}
+.top-menu{
+    margin-left: 5%;
+    width: 50%;
+    
+}
+.title{
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+.title h1{
+    margin: 0;
+}
+
+.header li:hover{
+    color: rgb(255, 255, 255, 1);
+}
+
+#OptionsForm{
+    margin-top: -1%;
+    width: 25%;
+    height: 70%;
+    margin-left: 5%;
+    text-align: center;
+    color: white;
+    display: inline-block;
+}
+.bookOptions{
+    font-size: 1.2em;
+}
+#OptionsForm input{
+    margin-bottom: 3%;
+    padding-left:2%;
+    width: 95%;
+    height: 7%;
+    
+    border-radius: 0.5em;
+}
+input[type="text"], input[type="number"]{
+    outline:none;
+    border: 1px solid black;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border: 1px;
+}
+
+.bookOptionsRange{
+    margin-bottom: 3%;
+    border-radius: 0.5em;
+    color: #000000;
+    background-color: white;
+    border: 1px solid black;
+    height: 6%;
+
+    font-size: 1.5em;
+    padding-left: 0.5em;
+    padding-right: 0.2em;
+    position: relative;
+    text-align: left;
+    padding-bottom: 0.3em;
+}
+
+.range{
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 70%;
+
+}
+
+#minPrice, #maxPrice, #minPages, #maxPages{
+    display: inline-block;
+    width: 11%;
+}
+
+#FindButton{
+    border: 1px solid black;
+    background-color: rgb(39,167,70);
+    border-radius: 0.5em;
+    color: white;
+    font-size: 1.5em;
+    width: 30%;
+    height: 7%;
+    cursor: pointer;
+    pointer-events: auto;
+}
+#FindButton:hover{
+    font-weight: bold;
+    border: 1px;
+    width: 35%;
+    height: 8%;
+  
+}
+input[type="range"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 60%;
+    left: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    height: 5px;
+    
+}
+input[type="range"]::-moz-range-track{
+    -moz-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-ms-track{
+    appearance: none;
+    height: 5px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    background-color: rgb(68,46,48);
+    cursor: pointer;
+    margin-top: -9px;
+    pointer-events: auto;
+    border-radius: 50%;
+}
+input[type="range"]::-moz-range-thumb{
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(68,46,48);
+    pointer-events: auto;
+}
+input[type="range"]::-ms-thumb{
+    appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(68,46,48);
+    pointer-events: auto;
+}
+
+.slider-track{
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+
+    border-radius: 5px;
+}
+
+#BookList{
+    width: 67%;
+    display: inline-block;
+    height: 70%;
+  
+    vertical-align: top;
+}
+
+.BookImage{
+    height: 60%;
+    background-color: white;
+    width: 100%;
+    border: 1px solid white;
+    border-top-left-radius: 0.5em ;
+    border-top-right-radius: 0.5em ;
+}
+.BookName{
+    height: 40%;
+    background-color: rgb(161,161,161);
+    color: white;
+    border: 1px solid  rgb(161,161,161);
+    border-bottom-left-radius: 0.5em ;
+    border-bottom-right-radius: 0.5em ;
+}
+.Books{
+    width: 90%;
+    height: 36%;
+    margin-top: 6%;
+}
+.Books li{
+    display: inline-block;
+    list-style: none;
+    width: 25%;
+    margin-left: 5%;
+    height: 100%;
+}
+#pageButtons{
+    margin-top: 3%;
+    margin-left: 0%;
+    width: 80%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+     justify-content: center;
+}
+#pageButtons li{
+    display: inline-block;
+    list-style: none;
+    width: 5%;
+    height: 100%;
+    border-bottom: 0.15em solid rgb(115, 103, 87);
+
+}
+
+
+#pageButtons button{
+    width: 90%;
+    height: 90%;
+
+}

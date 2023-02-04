@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href = "style.css">
+</head>
+<body>
+    <div class = "header">
+        <h1>Book Finder</h1>
+        <ul class = "top-menu">
+            <li><a href = "">Home Page</a></li>
+            <li><a href = "">Reading List</a></li>
+            <li><a href = "">Add Book</a></li>
+        </ul>
+        <ul class = "registrButtons">
+            <li>Login</li>
+            <li>Sign Up</li>
+        </ul>
+    </div>
+    <div class = "title"><h1>Find your book!</h1></div>
+    <form id = "OptionsForm">
+        <h1>Select book options</h1>
+
+        <label class ="bookOptions" for="genre-input">Enter the book`s genre: <br></label>
+            <input type="text" id="genre-input" placeholder="Historical prose">
+
+        <label class ="bookOptions" for="title-input">Enter the book`s title: <br></label>
+            <input type="text" id="title-input" placeholder="Ivanhoe">
+
+        <label class ="bookOptions" for="author-input">Enter the book`s author: <br></label>
+            <input type="text" id="author-input" placeholder="Walter Scott">
+
+        <label class ="bookOptions" for="pages-input">Enter the book`s price: <br></label>
+        
+        <div class = "bookOptionsRange"> 
+            <div id = "minPrice">0</div>
+            <div class = range>
+            <div class="slider-track"></div>
+                <input type="range" min="0" max="50" value="15" id="PriceSlider-1" oninput="slideOne(0)">
+                <input type="range" min="0" max="50" value="35" id="PriceSlider-2" oninput="slideTwo(0)">
+            </div>
+            <div id = "maxPrice">50</div>
+        </div>
+        
+        <label class ="bookOptions" for="pages-input">Enter amount of book`s pages: <br></label>
+        <div class = "bookOptionsRange"> 
+            <div id = "minPages">0</div>
+            <div class = range>
+            <div class="slider-track"></div>
+                <input type="range" min="0" max="300" value="90" id="PagesSlider-1" oninput="slideOne(1)">
+                <input type="range" min="0" max="300" value="210" id="PagesSlider-2" oninput="slideTwo(1)">
+            </div>
+            <div id = "maxPages">50</div>
+        </div>
+        <label class ="bookOptions" for="year-input">Enter the year of publication:<br></label>
+        <input type="number" id="year-input" placeholder="2005" min="0" max="2023">
+        <button id="FindButton" type="button">FIND</button>
+    </form>
+    <div id="BookList">
+    <ul class = "Books">
+        <li>
+            <div class = "BookImage"></div>
+            <div class = "BookName">
+                Book Name <br>
+                price: 4$;
+            </div>
+        </li>
+        <li>
+            <div class = "BookImage"></div>
+            <div class = "BookName">
+                Book Name <br>
+                price: 4$;
+            </div>
+        </li>
+        <li>
+            <div class = "BookImage"></div>
+            <div class = "BookName">
+                Book Name <br>
+                price: 4$;
+            </div>
+        </li>
+    </ul>
+    <ul  class = "Books">
+        <li>
+            <div class = "BookImage"></div>
+            <div class = "BookName">
+                Book Name <br>
+                price: 4$;
+            </div>
+        </li>
+        <li>
+            <div class = "BookImage"></div>
+            <div class = "BookName">
+                Book Name <br>
+                price: 4$;
+            </div>
+        </li>
+        <li>
+            <div class = "BookImage"></div>
+            <div class = "BookName">
+                Book Name <br>
+                price: 4$;
+            </div>
+        </li>
+    </ul>
+    <ul id = "pageButtons">
+        <li class="pageButton"><button class="pageButton">1</button></li>
+        <li class="pageButton"><button class="pageButton">2</button></li>
+        <li class="pageButton"><button class="pageButton">3</button></li>
+        <li class="pageButton"><button class="pageButton">...</button></li>
+        <li class="pageButton"><button class="pageButton">8</button></li>
+    </ul>
+   
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
