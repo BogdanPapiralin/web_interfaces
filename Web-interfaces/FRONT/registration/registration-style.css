@@ -1,0 +1,102 @@
+
+body {
+  background-image: url("SignLoginBackground.jpg");
+  font-family: sans-serif;
+  font-size: 10px;
+  background-repeat: no-repeat;
+
+}
+form {
+  border-radius: 10px;
+  background: #fff;
+  padding: 4em 4em 2em;
+  width: 30%;
+  margin-left: 30%;
+  margin-top: 7%;
+  box-shadow: 0 0 1em #222;
+  border-radius: 1em;
+  text-align: center;
+}
+  h2 {
+    margin:0 0 1.8em 0;
+    padding:0.5em;
+    text-align:center;
+    font-size:2.9em;
+    color: rgb(94, 90, 87);
+    border-bottom:solid 1px #e5e5e5;
+  }
+  p {
+    margin: 0 0 3em 0;
+    position: relative;
+  }
+.sub{ 
+    margin-bottom: 0em;
+  }
+  input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    margin:0;
+  }
+  input[type="email"],
+  input[type="password"] {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    font-size: 1.6em;
+    padding: .8em .5em;
+    border-radius: 0.2em;
+  }
+  input[type="email"]:focus,input[type="password"]:focus {
+    background: #fff
+  }
+  .error {
+    display:none;
+    background: #F9A5A5;
+    
+    color: #666;
+  }
+  input[type="submit"] {
+    background: #B86D16;
+    box-shadow: 0 3px 0 0 darken;
+    border-radius: 0.2em;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 2em;
+    line-height: 1.6em;
+    margin: 2em 0 0;
+    margin-bottom: 0em;
+    outline: none;
+    padding: .8em 0;
+    text-shadow: 0 1px #68B25B;
+  }
+
+  input[type="submit"]:hover {
+    background: #EFC34F;
+    text-shadow:0 1px 3px darken(button, 30%);
+  }
+  label{
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    color: #999;
+    font-size: 1.4em;
+    display: inline-block;
+    padding: 0.3em 0.4em;
+    font-weight: 400;
+    background-color: rgba(255,255,255,0);
+   transition: (color .3s, top .3s, background-color .8s);
+  }
+  .floatLabel{
+      top: -0.9em;
+      background-color: rgba(255,255,255,0.8);
+      font-size: 1.2em;
+  }
+
+a{
+
+  font-size: 1.2em;
+  color: rgb(94, 90, 87);
+}
