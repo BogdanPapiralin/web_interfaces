@@ -1,36 +1,231 @@
-﻿
-@{
-
-    ViewData["Title"] = "Home page";
-   
+﻿@{
+    ViewData["Title"] = "Index";
 }
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
+@using Microsoft.AspNetCore.Html
+@using Web_interfaces.Filters
+@using Web_interfaces.Paging
+@using Web_interfaces.Data
+@using System.Linq
+@using Microsoft.AspNetCore.Html
+@using System.Data
+
+@using Microsoft.AspNetCore.Html
+
+
+
+@using System.Linq
 
 
 @using System.Data
-@{
-    
-   
+@model  Web_interfaces.Paging.BooksListViewModel
 
-}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<div class="text-center border-secondary">
-    <h1 class="display-4">Реєстрація</h1>
-    <p>Введіть cвої данні:</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <link type="text/css" href="~/css/style.css" rel="stylesheet" />
+    <script src="~/js/script.js"> </script>
     
 
-    <form method="POST">
+</head>
+<body>
+    <div class="header">
+        <h1>Book Finder</h1>
+        <ul class="top-menu">
+            <li><a href="">Home Page</a></li>
+            <li><a href="">Reading List</a></li>
+            <li><a href="">Add Book</a></li>
+        </ul>
+        <ul class="registrButtons">
+            <li>Login</li>
+            <li>Sign Up</li>
+        </ul>
+    </div>
+    <div class="title"><h1>Find your book!</h1></div>
+    <form id="OptionsForm" method="POST">
+        <h1>Select book options</h1>
      
-        E-mail: <input type="email" name="Email" />
-        <p></p>
-        Password: <input type="text" name="Pass" />
-      
-        <p></p>
-        <input type="submit" value="Надіслати" />
+        <label class="bookOptions" for="genre-input">Enter the book`s genre: <br></label>
+        <input type="text" id="genre-input" name="genre" placeholder="Historical prose">
+
+        <label class="bookOptions" for="title-input">Enter the book`s title: <br></label>
+        <input type="text" id="title-input" name="title" placeholder="Ivanhoe">
+
+        <label class="bookOptions" for="author-input">Enter the book`s author: <br></label>
+        <input type="text" id="author-input" name="author" placeholder="Walter Scott">
+
+        <label class="bookOptions" for="pages-input">Enter the book`s price: <br></label>
+
+        <div class="bookOptionsRange">
+            <div id="minPrice">0</div>
+            <div class=range>
+                <div class="slider-track"></div>
+                <input type="range" min="0" max="50" value="15" id="PriceSlider-1" name="minprice" oninput="slideOne(0)">
+                <input type="range" min="0" max="50" value="35" id="PriceSlider-2" name="maxprice" oninput="slideTwo(0)">
+            </div>
+            <div id="maxPrice">50</div>
+        </div>
+
+        <label class="bookOptions" for="pages-input">Enter amount of book`s pages: <br></label>
+        <div class="bookOptionsRange">
+            <div id="minPages">0</div>
+            <div class=range>
+                <div class="slider-track"></div>
+                <input type="range" min="0" max="300" value="90" id="PagesSlider-1" name="minpages" oninput="slideOne(1)">
+                <input type="range" min="0" max="300" value="210" id="PagesSlider-2" name="maxpages" oninput="slideTwo(1)">
+            </div>
+            <div id="maxPages">50</div>
+        </div>
+        <label class="bookOptions" for="year-input">Enter the year of publication:<br></label>
+        <input type="number" id="year-input" name="year" placeholder="2005" min="0" max="2023">
+        <button id="FindButton" type="submit">FIND</button>
     </form>
-</div>
+    <div id="BookList">
+        <ul class="Books">
+
+            @{
+                string i="";
+                List<Book> a = new List<Book> ();
+            }
+            @foreach (var p in Model.Books)
+            {
+                a.Add(p);
+               
+                 
+                }
+
+
+
+
+
+                 @try
+            {
+                i = a[0].Title;
+                <li>
+                    <div class="BookImage"></div>
+                    <div class="BookName">
+                        @a[0].Title <br>
+                        price: @a[0].Price $;
+                    </div>
+                </li>
+
+            }
+            catch
+            {
+
+            }
+            
+            @try
+            {
+                i = a[1].Title;
+                <li>
+                    <div class="BookImage"></div>
+                    <div class="BookName">
+                        @a[1].Title <br>
+                        price: @a[1].Price $;
+                    </div>
+                </li>
+
+            }
+            catch
+            {
+
+            }
+
+            @try
+            {
+                i = a[2].Title;
+                <li>
+                    <div class="BookImage"></div>
+                    <div class="BookName">
+                        @a[2].Title <br>
+                        price: @a[2].Price $;
+                    </div>
+                </li>
+
+            }
+            catch
+            {
+
+            }
+          
+           
+        </ul>
+        <ul class="Books">
+            @try
+            {
+                i = a[3].Title;
+                <li>
+                    <div class="BookImage"></div>
+                    <div class="BookName">
+                        @a[3].Title <br>
+                        price: @a[3].Price $;
+                    </div>
+                </li>
+
+            }
+            catch
+            {
+
+            }
+            @try
+            {
+                i = a[4].Title;
+                <li>
+                    <div class="BookImage"></div>
+                    <div class="BookName">
+                        @a[4].Title <br>
+                        price: @a[4].Price $;
+                    </div>
+                </li>
+            }
+            catch
+            {
+
+            }
+            @try
+            {
+                i = a[5].Title;
+                <li>
+                    <div class="BookImage"></div>
+                    <div class="BookName">
+                        @a[5].Title <br>
+                        price: @a[5].Price $;
+                    </div>
+                </li>
+
+            }
+            catch
+            {
+
+            }
+            
+            
+            
+
+
+
+
+
+        </ul>
+        <ul id="pageButtons">
+            <div class="btn-group pull-left">
+            @{
+                IHtmlContent html = new HtmlString("");
+
+                        @PagingHelpers.PageLinks( html,Model.PagingInfo, x => Url.Action("Index", new { page = x }))
+            }
+                </div>
+           
+        </ul>
+
+    </div>
+   
+</body>
+</html>
