@@ -6,10 +6,11 @@ namespace Web_interfaces.Filters
     {
 
 
-        public static List<Book> SearchMain(string searchtitle="", string searchganre = "", string searchautor = "", int minprice = 0, int maxprice = 600, int minpages = 0, int maxpages = 600,int yearss = 0)
+        public static List<Book> SearchMain(string searchganre = "",string searchtitle="" , string searchautor = "", int minprice = 0, int maxprice = 50, int minpages = 0, int maxpages = 300,int yearss = 0)
         {
             using (var context = new BookContext())
             {
+
                 List<Book> books;
                 books = Search.SearchTitle(searchtitle);
                 books = Search.SearchGanre(books, searchganre);
@@ -17,6 +18,8 @@ namespace Web_interfaces.Filters
                 books = Search.SearchPrice(books, minprice, maxprice);
                 books = Search.SearchPages(books, minpages, maxpages);
                 books = Search.SearchYear(books, yearss);
+                foreach(Book book in books) { Console.WriteLine(book.Title); }
+                
                 return books;
             }
         }
