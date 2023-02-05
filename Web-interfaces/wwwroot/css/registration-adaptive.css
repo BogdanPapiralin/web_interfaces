@@ -1,0 +1,27 @@
+@media screen and (max-width:360px) {
+    body{
+        font-size: 3px;
+    }
+}
+@media screen and (min-width:360px) {
+    body{
+        font-size: 5px;
+    }
+}
+@media screen and (min-width:768px) {
+    body{
+        font-size: 7px;
+    }
+}
+@media screen and (min-width:992px) {
+    body{
+        font-size: 9px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    body{
+        font-size: 11px;
+        max-width: 2500px;
+    }
+}

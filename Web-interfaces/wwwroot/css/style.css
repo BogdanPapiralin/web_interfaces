@@ -1,62 +1,69 @@
-body{
+body {
     background-image: url("background.jpg");
     background-size: 100% 100%;
-    height: 658px;
+    height: 685px;
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
 }
-.header{
-   background: linear-gradient(to right, rgb(77,47,45), 30%, rgb(121,102,87));
-   width: 100%;
-   height: 12%;
-   margin-top: 0;
-  
-}
-.header a{
-    text-decoration: none;
-    color: white;
-}
-.header h1{
-    display: inline-block;
-    color: white;
-    margin-left: 1%;
-}
-.header ul{
-    display: inline-block;
 
+.header {
+    background: linear-gradient(to right, rgb(77,47,45), 30%, rgb(121,102,87));
+    width: 100%;
+    height: 12%;
+    margin-top: 0;
 }
-.header li{
-    display: inline-block;
-    list-style: none;
-    width: 30%;
-    font-size: 1.3em;
-    color: rgb(255, 255, 255, 0.8);
-}
-.registrButtons{
+
+    .header a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .header h1 {
+        display: inline-block;
+        color: white;
+        margin-left: 1%;
+    }
+
+    .header ul {
+        display: inline-block;
+    }
+
+    .header li {
+        display: inline-block;
+        list-style: none;
+        width: 30%;
+        font-size: 1.3em;
+        color: rgb(255, 255, 255, 0.8);
+    }
+
+.registrButtons {
     margin-left: 3%;
     width: 20%;
     text-align: right;
+    display: inline-block;
 }
-.top-menu{
+
+.top-menu {
     margin-left: 5%;
     width: 50%;
-    
 }
-.title{
+
+.title {
     color: white;
     font-size: 1.2em;
     text-align: center;
 }
-.title h1{
-    margin: 0;
-}
 
-.header li:hover{
+    .title h1 {
+        margin: 0;
+    }
+
+.header li:hover {
     color: rgb(255, 255, 255, 1);
 }
 
-#OptionsForm{
+#OptionsForm {
     margin-top: -1%;
     width: 25%;
     height: 70%;
@@ -64,35 +71,38 @@ body{
     text-align: center;
     color: white;
     display: inline-block;
+    margin-bottom: 5%;
 }
-.bookOptions{
+
+.bookOptions {
     font-size: 1.2em;
 }
-#OptionsForm input{
+
+#OptionsForm input {
     margin-bottom: 3%;
-    padding-left:2%;
+    padding-left: 2%;
     width: 95%;
     height: 7%;
-    
+    font-size: 1em;
     border-radius: 0.5em;
 }
-input[type="text"], input[type="number"]{
-    outline:none;
-    border: 1px solid black;
+
+input[type="text"], input[type="number"] {
+    outline: none;
+    border: 0.01em solid black;
 }
 
-input[type="text"]:focus, input[type="number"]:focus {
-    border: 1px;
-}
+    input[type="text"]:focus, input[type="number"]:focus {
+        border: 0.01em;
+    }
 
-.bookOptionsRange{
+.bookOptionsRange {
     margin-bottom: 3%;
     border-radius: 0.5em;
     color: #000000;
     background-color: white;
-    border: 1px solid black;
+    border: 0.01em solid black;
     height: 6%;
-
     font-size: 1.5em;
     padding-left: 0.5em;
     padding-right: 0.2em;
@@ -101,21 +111,20 @@ input[type="text"]:focus, input[type="number"]:focus {
     padding-bottom: 0.3em;
 }
 
-.range{
+.range {
     display: inline-block;
     position: relative;
     height: 100%;
     width: 70%;
-
 }
 
-#minPrice, #maxPrice, #minPages, #maxPages{
+#minPrice, #maxPrice, #minPages, #maxPages {
     display: inline-block;
     width: 11%;
 }
 
-#FindButton{
-    border: 1px solid black;
+#FindButton {
+    border: 0.01em solid black;
     background-color: rgb(39,167,70);
     border-radius: 0.5em;
     color: white;
@@ -125,14 +134,15 @@ input[type="text"]:focus, input[type="number"]:focus {
     cursor: pointer;
     pointer-events: auto;
 }
-#FindButton:hover{
-    font-weight: bold;
-    border: 1px;
-    width: 35%;
-    height: 8%;
-  
-}
-input[type="range"]{
+
+    #FindButton:hover {
+        font-weight: bold;
+        border: 0.01em;
+        width: 35%;
+        height: 8%;
+    }
+
+input[type="range"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -147,115 +157,179 @@ input[type="range"]{
 }
 
 
-input[type="range"]::-webkit-slider-runnable-track{
-    -webkit-appearance: none;
-    height: 5px;
-    
-}
-input[type="range"]::-moz-range-track{
-    -moz-appearance: none;
-    height: 5px;
-}
-input[type="range"]::-ms-track{
-    appearance: none;
-    height: 5px;
-}
-input[type="range"]::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 1.7em;
-    width: 1.7em;
-    background-color: rgb(68,46,48);
-    cursor: pointer;
-    margin-top: -9px;
-    pointer-events: auto;
-    border-radius: 50%;
-}
-input[type="range"]::-moz-range-thumb{
-    -webkit-appearance: none;
-    height: 1.7em;
-    width: 1.7em;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: rgb(68,46,48);
-    pointer-events: auto;
-}
-input[type="range"]::-ms-thumb{
-    appearance: none;
-    height: 1.7em;
-    width: 1.7em;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: rgb(68,46,48);
-    pointer-events: auto;
-}
+    input[type="range"]::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        height: 0.5em;
+    }
 
-.slider-track{
+    input[type="range"]::-moz-range-track {
+        -moz-appearance: none;
+        height: 0.5em;
+    }
+
+    input[type="range"]::-ms-track {
+        appearance: none;
+        height: 0.5em;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 1.7em;
+        width: 1.7em;
+        background-color: rgb(68,46,48);
+        cursor: pointer;
+        margin-top: -4%;
+        pointer-events: auto;
+        border-radius: 50%;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        -webkit-appearance: none;
+        height: 1.7em;
+        width: 1.7em;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: rgb(68,46,48);
+        pointer-events: auto;
+    }
+
+    input[type="range"]::-ms-thumb {
+        appearance: none;
+        height: 1.7em;
+        width: 1.7em;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: rgb(68,46,48);
+        pointer-events: auto;
+    }
+
+.slider-track {
     width: 100%;
-    height: 5px;
+    height: 30%;
     position: absolute;
     margin: auto;
     top: 50%;
-
-    border-radius: 5px;
+    border-radius: 0.5em;
 }
 
-#BookList{
+#BookList {
     width: 67%;
     display: inline-block;
     height: 70%;
-  
     vertical-align: top;
 }
 
-.BookImage{
-    height: 60%;
-    background-color: white;
-    width: 100%;
-    border: 1px solid white;
-    border-top-left-radius: 0.5em ;
-    border-top-right-radius: 0.5em ;
-}
-.BookName{
-    height: 40%;
-    background-color: rgb(161,161,161);
-    color: white;
-    border: 1px solid  rgb(161,161,161);
-    border-bottom-left-radius: 0.5em ;
-    border-bottom-right-radius: 0.5em ;
-}
-.Books{
+.Books {
     width: 90%;
     height: 36%;
     margin-top: 6%;
 }
-.Books li{
-    display: inline-block;
-    list-style: none;
-    width: 25%;
-    margin-left: 5%;
-    height: 100%;
+
+    .Books li {
+        display: inline-block;
+        list-style: none;
+        width: 15%;
+        margin-left: 5%;
+        height: 100%;
+    }
+
+.BookImage {
+    height: 90%;
+    width: 100%;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
 }
-#pageButtons{
+
+    .BookImage img {
+        height: 100%;
+        width: 100%;
+    }
+
+.BookImage {
+    text-align: center;
+}
+
+.BookName {
+    height: 10%;
+    background-color: rgb(161,161,161);
+    color: white;
+    border: 0.01em solid rgb(161,161,161);
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    font-size: 1.1em;
+}
+
+#pageButtons {
     margin-top: 3%;
     margin-left: 0%;
     width: 80%;
     height: 7%;
     display: flex;
     align-items: center;
-     justify-content: center;
+    justify-content: center;
 }
-#pageButtons li{
+
+    #pageButtons li {
+        display: inline-block;
+        list-style: none;
+        width: 5%;
+        height: 100%;
+        border-bottom: 0.15em solid rgb(115, 103, 87);
+    }
+
+
+    #pageButtons button {
+        width: 90%;
+        height: 90%;
+        font-size: 1em;
+    }
+
+.footer {
+    height: 15%;
+    width: 100%;
+    background: linear-gradient(to right, rgb(193,164,132) 10%, rgb(77,47,45));
+    width: 100%;
+}
+
+    .footer img {
+        height: 90%;
+        display: inline-block;
+        margin-left: 5%;
+    }
+
+.down-menu {
     display: inline-block;
     list-style: none;
-    width: 5%;
-    height: 100%;
-    border-bottom: 0.15em solid rgb(115, 103, 87);
-
+    color: rgb(255,255,255,0.8);
+    font-size: 1em;
+    vertical-align: top;
+    margin-top: 2%;
 }
 
+    .down-menu li {
+        border-left: solid 0.01em #e5e5e5;
+        padding-left: 0.5em;
+    }
 
-#pageButtons button{
-    width: 90%;
-    height: 90%;
-
+.footer p {
+    display: inline-block;
+    color: white;
+    vertical-align: top;
+    margin-top: 4%;
+    font-size: 1.3em;
+    margin-left: 10%;
 }
+
+.down-info {
+    display: inline-block;
+    list-style: none;
+    color: white;
+    font-size: 1em;
+    vertical-align: top;
+    margin-left: 10%;
+    height: 10%;
+}
+
+    .down-info li {
+        margin-top: 3%;
+    }
