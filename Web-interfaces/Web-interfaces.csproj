@@ -10,6 +10,29 @@
   <ItemGroup>
     <None Include="wwwroot\css\background.jpg" />
     <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\Image\1.jpg" />
+    <None Include="wwwroot\Image\10.jpg" />
+    <None Include="wwwroot\Image\11.jpg" />
+    <None Include="wwwroot\Image\12.jpg" />
+    <None Include="wwwroot\Image\13.jpg" />
+    <None Include="wwwroot\Image\14.jpg" />
+    <None Include="wwwroot\Image\15.jpg" />
+    <None Include="wwwroot\Image\16.jpg" />
+    <None Include="wwwroot\Image\17.jpg" />
+    <None Include="wwwroot\Image\18.jpg" />
+    <None Include="wwwroot\Image\19.jpg" />
+    <None Include="wwwroot\Image\2.jpg" />
+    <None Include="wwwroot\Image\20.jpg" />
+    <None Include="wwwroot\Image\21.jpg" />
+    <None Include="wwwroot\Image\22.jpg" />
+    <None Include="wwwroot\Image\23.jpg" />
+    <None Include="wwwroot\Image\3.jpg" />
+    <None Include="wwwroot\Image\4.jpg" />
+    <None Include="wwwroot\Image\5.jpg" />
+    <None Include="wwwroot\Image\6.jpg" />
+    <None Include="wwwroot\Image\7.jpg" />
+    <None Include="wwwroot\Image\8.jpg" />
+    <None Include="wwwroot\Image\9.jpg" />
     <None Include="wwwroot\js\script.js" />
   </ItemGroup>
 

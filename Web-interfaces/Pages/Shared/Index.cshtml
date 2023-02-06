@@ -43,10 +43,16 @@
             <li><a href="">Add Book</a></li>
         </ul>
         <ul class="registrButtons">
-            <li>Login</li>
-            <li>Sign Up</li>
+            <li ><a href="/Home/login">Login</a></li>
+            <li><a href="/Home/registration">Sign Up</a></li>
         </ul>
     </div>
+
+
+
+
+
+
     <div class="title"><h1>Find your book!</h1></div>
     <form id="OptionsForm" method="POST">
         <h1>Select book options</h1>
@@ -102,16 +108,16 @@
 
 
 
-
+                
 
                  @try
             {
-                i = a[0].Title;
+                string sc = "Image/" + @a[0].BookId + ".jpg";
+
                 <li>
-                    <div class="BookImage"></div>
+                    <div class="BookImage"><img src=@sc></div>
                     <div class="BookName">
-                        @a[0].Title <br>
-                        price: @a[0].Price $;
+                        price @a[1].Price $ | Add to cart
                     </div>
                 </li>
 
@@ -124,11 +130,13 @@
             @try
             {
                 i = a[1].Title;
+                string sc = "Image/" + @a[1].BookId + ".jpg";
+                
                 <li>
-                    <div class="BookImage"></div>
+                    <div class="BookImage"><img src= @sc ></div>
                     <div class="BookName">
-                        @a[1].Title <br>
-                        price: @a[1].Price $;
+                        
+                        price @a[1].Price $ | Add to cart
                     </div>
                 </li>
 
@@ -141,11 +149,13 @@
             @try
             {
                 i = a[2].Title;
+                string sc = "Image/" + @a[2].BookId + ".jpg";
+                
                 <li>
-                    <div class="BookImage"></div>
+                    <div class="BookImage"><img src= @sc ></div>
                     <div class="BookName">
-                        @a[2].Title <br>
-                        price: @a[2].Price $;
+                        
+                        price @a[2].Price $ | Add to cart
                     </div>
                 </li>
 
@@ -161,11 +171,13 @@
             @try
             {
                 i = a[3].Title;
+                string sc = "Image/" + @a[3].BookId + ".jpg";
+
                 <li>
-                    <div class="BookImage"></div>
+                    <div class="BookImage"><img src=@sc></div>
                     <div class="BookName">
-                        @a[3].Title <br>
-                        price: @a[3].Price $;
+
+                        price @a[3].Price $ | Add to cart
                     </div>
                 </li>
 
@@ -177,11 +189,13 @@
             @try
             {
                 i = a[4].Title;
+                string sc = "Image/" + @a[4].BookId + ".jpg";
+                
                 <li>
-                    <div class="BookImage"></div>
+                    <div class="BookImage"><img src= @sc ></div>
                     <div class="BookName">
-                        @a[4].Title <br>
-                        price: @a[4].Price $;
+
+                        price: @a[4].Price $ | Add to cart
                     </div>
                 </li>
             }
@@ -192,11 +206,13 @@
             @try
             {
                 i = a[5].Title;
+                string sc = "Image/" + @a[5].BookId + ".jpg";
+                
                 <li>
-                    <div class="BookImage"></div>
+                    <div class="BookImage"><img src= @sc ></div>
                     <div class="BookName">
-                        @a[5].Title <br>
-                        price: @a[5].Price $;
+                        
+                        price: @a[5].Price $ | Add to cart
                     </div>
                 </li>
 
@@ -219,7 +235,7 @@
             @{
                 IHtmlContent html = new HtmlString("");
 
-                        @PagingHelpers.PageLinks( html,Model.PagingInfo, x => Url.Action("Index", new { page = x }))
+                            @PagingHelpers.PageLinks( html,Model.PagingInfo, x => Url.Action("Index", new { page = x }))
             }
                 </div>
            

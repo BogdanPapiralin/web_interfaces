@@ -13,11 +13,55 @@ namespace Web_interfaces.Controllers
 
         
             int pageSize = 6;
-            // GET: MedicinesController
-          
-          
+        // GET: MedicinesController
 
-            [HttpGet]
+
+        [HttpGet]
+        public IActionResult login()
+        { return View(); }
+
+        [HttpPost]
+
+        public IActionResult login(string Email, string password)
+        {
+            if (Email != null && password != null )
+            {
+               if( DbUser.SearchUser(Email, password)) 
+                {return Redirect("/?page=1");
+                    
+                }
+                else { ViewData["Message"] = "try again Email or password no correct ";
+                    return View(); }
+            }
+            else
+            {
+                ViewData["Message"] = "try again Email or password no correct ";
+                return View();
+            }
+            
+        }
+
+        [HttpGet]
+        public IActionResult registration()
+        { return View(); }
+
+        [HttpPost]
+
+        public IActionResult registration(string Email,string password,string confirm_password)
+        {
+            if(Email!=null && password != null && password == confirm_password ) 
+            { 
+            DbUser.AddUser(Email, password);
+            }
+            else
+            {
+                ViewData["Message"] = "try again Email or password = null or password != confirm_password ";
+                return View();
+            }
+            return Redirect("/?page=1");
+        }
+
+        [HttpGet]
         public IActionResult Index(int page = 1)
         {
             Console.WriteLine("asdasd");
@@ -48,21 +92,18 @@ namespace Web_interfaces.Controllers
         }
         [HttpPost]
 
-        public IActionResult Index(int page = 1,string genre="" , string title = "", string author = "", int minprice=0,int maxprice=50,int minpages=0,int maxpages=300 ,int year=0 )
+        public IActionResult Index(int page = 1,string genre="" , string title = "", string author = "", int minprice=0,int maxprice=50,int minpages=0,int maxpages=1000 ,int year=0 )
         {
 
-             if (genre == null) { genre ="";Console.WriteLine("55555555555"); }
-            if (title == null) { title = ""; Console.WriteLine("55555555555"); }
-            if (author == null) { author = ""; Console.WriteLine("55555555555"); }
+             if (genre == null) { genre ="";}
+            if (title == null) { title = "";  }
+            if (author == null) { author = "";  }
            
             BooksListViewModel model = new BooksListViewModel();
 
             List<Book> boo = Search.SearchMain(genre, title, author, minprice, maxprice, minpages, maxpages, year);
-            List<Book> booo = Search.SearchMain(genre, title, author, minprice, maxprice, minpages, maxpages, year);
-            Console.WriteLine("11111111111111111");
-           
-            foreach (Book book in booo) { Console.WriteLine(book.Title); }
-            Console.WriteLine("22222222222222222");
+         
+          
 
             model.Books = Search.SearchMain();
             model.Books = boo
@@ -81,14 +122,7 @@ namespace Web_interfaces.Controllers
 
 
 
-            Console.WriteLine(genre + title + author + minprice + maxprice + minpages + maxpages + year);
-            List <Book>  Books = Search.SearchMain( genre,  title,  author,  minprice,  maxprice,  minpages,  maxpages,  year);
-       
-
-
-                
-            Console.WriteLine(genre + title + author + minprice + maxprice + minpages + maxpages + year);
-            
+          
             return View(model);
         }
     }
