@@ -38,9 +38,9 @@
     <div class="header">
         <h1>Book Finder</h1>
         <ul class="top-menu">
-            <li><a href="">Home Page</a></li>
-            <li><a href="">Reading List</a></li>
-            <li><a href="">Add Book</a></li>
+            <li><a href="/?page=1">Home Page</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="/Home/cart">Shoping cart<img src="/css/shopping_cart.png"></a></li>
         </ul>
         <ul class="registrButtons">
             <li ><a href="/Home/login">Login</a></li>
@@ -72,8 +72,8 @@
             <div id="minPrice">0</div>
             <div class=range>
                 <div class="slider-track"></div>
-                <input type="range" min="0" max="50" value="15" id="PriceSlider-1" name="minprice" oninput="slideOne(0)">
-                <input type="range" min="0" max="50" value="35" id="PriceSlider-2" name="maxprice" oninput="slideTwo(0)">
+                <input type="range" min="0" max="50" value="0" id="PriceSlider-1" name="minprice" oninput="slideOne(0)">
+                <input type="range" min="0" max="50" value="50" id="PriceSlider-2" name="maxprice" oninput="slideTwo(0)">
             </div>
             <div id="maxPrice">50</div>
         </div>
@@ -83,8 +83,8 @@
             <div id="minPages">0</div>
             <div class=range>
                 <div class="slider-track"></div>
-                <input type="range" min="0" max="300" value="90" id="PagesSlider-1" name="minpages" oninput="slideOne(1)">
-                <input type="range" min="0" max="300" value="210" id="PagesSlider-2" name="maxpages" oninput="slideTwo(1)">
+                <input type="range" min="0" max="300" value="0" id="PagesSlider-1" name="minpages" oninput="slideOne(1)">
+                <input type="range" min="0" max="300" value="300" id="PagesSlider-2" name="maxpages" oninput="slideTwo(1)">
             </div>
             <div id="maxPages">50</div>
         </div>
@@ -117,8 +117,26 @@
                 <li>
                     <div class="BookImage"><img src=@sc></div>
                     <div class="BookName">
-                        price @a[1].Price $ | Add to cart
+                        price @a[0].Price $ | <a href="#" id="add-to-cart">add to cart</a>
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#add-to-cart").click(function (e) {
+                                    e.preventDefault();
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/Home/Edit/"+@a[0].BookId,
+                                        success: function (data) {
+                                            console.log("Action executed successfully");
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
+
+
                     </div>
+
                 </li>
 
             }
@@ -135,8 +153,23 @@
                 <li>
                     <div class="BookImage"><img src= @sc ></div>
                     <div class="BookName">
-                        
-                        price @a[1].Price $ | Add to cart
+
+                        price @a[1].Price $ | <a href="#" id="add-to-cart1">add to cart</a>
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#add-to-cart1").click(function (e) {
+                                    e.preventDefault();
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/Home/Edit/" + @a[1].BookId,
+                                        success: function (data) {
+                                            console.log("Action executed successfully");
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
                     </div>
                 </li>
 
@@ -154,8 +187,23 @@
                 <li>
                     <div class="BookImage"><img src= @sc ></div>
                     <div class="BookName">
-                        
-                        price @a[2].Price $ | Add to cart
+
+                        price @a[2].Price $ | <a href="#" id="add-to-cart2">add to cart</a>
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#add-to-cart2").click(function (e) {
+                                    e.preventDefault();
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/Home/Edit/" + @a[2].BookId,
+                                        success: function (data) {
+                                            console.log("Action executed successfully");
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
                     </div>
                 </li>
 
@@ -177,7 +225,22 @@
                     <div class="BookImage"><img src=@sc></div>
                     <div class="BookName">
 
-                        price @a[3].Price $ | Add to cart
+                        price @a[3].Price $ | <a href="#" id="add-to-cart3">add to cart</a>
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#add-to-cart3").click(function (e) {
+                                    e.preventDefault();
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/Home/Edit/" + @a[3].BookId,
+                                        success: function (data) {
+                                            console.log("Action executed successfully");
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
                     </div>
                 </li>
 
@@ -195,7 +258,22 @@
                     <div class="BookImage"><img src= @sc ></div>
                     <div class="BookName">
 
-                        price: @a[4].Price $ | Add to cart
+                        price: @a[4].Price $ | <a href="#" id="add-to-cart4">add to cart</a>
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#add-to-cart4").click(function (e) {
+                                    e.preventDefault();
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/Home/Edit/" + @a[4].BookId,
+                                        success: function (data) {
+                                            console.log("Action executed successfully");
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
                     </div>
                 </li>
             }
@@ -211,8 +289,24 @@
                 <li>
                     <div class="BookImage"><img src= @sc ></div>
                     <div class="BookName">
-                        
-                        price: @a[5].Price $ | Add to cart
+
+                        price: @a[5].Price $ | <a href="#" id="add-to-cart5">add to cart</a>
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#add-to-cart5").click(function (e) {
+                                    e.preventDefault();
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/Home/Edit/" + @a[5].BookId,
+                                        success: function (data) {
+                                            console.log("Action executed successfully");
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
+                     
                     </div>
                 </li>
 
@@ -224,7 +318,7 @@
             
             
             
-
+            
 
 
 
@@ -241,6 +335,21 @@
            
         </ul>
 
+    </div>
+
+    <div class="footer">
+        <img src="/css/icon.png">
+        <ul class="down-menu">
+            <li>Home Page</li>
+            <li>About Us</li>
+            <li>Donate for project</li>
+        </ul>
+        <p>&copy; Copyright 2023. All Rights Reserved.</p>
+        <ul class="down-info">
+            <li>Mykolaiv, Ukraine</li>
+            <li style="text-decoration: underline;">bookfinder@gmail.com</li>
+            <li>+01 234 567 89 | +09 876 543 21</li>
+        </ul>
     </div>
    
 </body>

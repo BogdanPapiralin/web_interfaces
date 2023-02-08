@@ -1,0 +1,157 @@
+
+@using Microsoft.AspNetCore.Html
+@using Web_interfaces.Filters
+@using Web_interfaces.Paging
+@using Web_interfaces.Data
+@using System.Linq
+@using Microsoft.AspNetCore.Html
+@using System.Data
+
+@using Microsoft.AspNetCore.Html
+
+
+
+@using System.Linq
+
+
+@using System.Data
+
+
+@model Web_interfaces.Paging.OrderListViewModel
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>BookFinder</title>
+    <link rel ="stylesheet" href = "/css/cart-style.css">
+    <script src="/js/cart-script.js"></script>
+
+
+
+
+
+
+</head>
+<body>
+
+    
+        @{
+            string i = "";
+            List<Order>
+            a = new List<Order>();
+        }
+        @foreach (var p in Model.Orders)
+        {
+            a.Add(p);
+
+        
+    }
+       
+    <table >
+       
+        
+            <tr height = "5%" style="">
+              <td colspan="4" width="40%" style="text-align: left;">Product</td>
+              <td width="10%">Quantity</td>
+              <td colspan="2" width="20%">Price</td>
+              <td colspan="1" width="10%">Total</td>
+              <td></td>
+            </tr>
+        @{
+            string rscc = "del-ord2";int o = -1;
+}
+        @{
+            
+        }
+        @foreach (var p in Model.Orders) {
+            o++;
+            string rsc = "/Image/" + p.BookId + ".jpg";
+            string rscc1 = "removeProduct" + "(" + o + ")";
+            string rscc2 = "/Home/cart/" + @p.OrderId;
+
+            <tr height = "15%"  style=""  class="products">
+
+                <td width="10%"><img src=@rsc alt=""></td>
+                <td colspan="3" width="30%" style="text-align: left;">
+                    <li style="color: rgb(9, 159, 197); ">
+                        
+                             @Search.Searchid(p.BookId)[0].Title;
+                        
+                        
+                    </li>
+                    <li>by 
+                           <span style="color: rgb(9, 159, 197);"> 
+                        
+                             @Search.Searchid(p.BookId)[0].Author;
+                        
+                           </span>
+                    </li>
+                    <li>Status:<span style="color: rgb(5, 98, 38);">In stock</span></li></td>
+                <td width="10%" height: 20%> @p.Quantity</td>
+                <td colspan="2" width="20%">@{int a1 = Search.Searchid(p.BookId)[0].Price;}@a1 $</td>
+                <td width="10%">@p.TotalPrice $</td>
+           
+                <td colspan="1" width="20%">
+                    <a href = @rscc2>   <button class="deleteButton" onclick=@rscc1>Remove</button></a>
+                </td>
+               
+               
+
+               
+            </tr>
+        }
+            <tr></tr>
+            
+                <tr height = "7%"  style="" >
+                    <td colspan="5" width="50%"></td>
+                    <td colspan="2" width="20%"  style="text-align: right; color: rgb(0,0,0,0.8);">Subtotal</td>
+                    <td colspan="2" width="20%" style="text-align: right;">
+                        @{
+                    decimal t1=0;
+                            @foreach (var p in Model.Orders)
+                    {
+                        t1 = t1 + p.TotalPrice;
+                    }
+                }
+                        @t1 $
+                    </td>
+                </tr>
+                <tr height = "7%" >
+                    <td colspan="5" width="50%"></td>
+                    <td colspan="2" width="20%"  style="text-align: right; color: rgb(0,0,0,0.8);">Estimated shipping</td>
+                    <td colspan="2" width="20%" style="text-align: right;">$7</td>
+                </tr>
+                <tr height = "10%">
+                    <td colspan="5" width="50%"></td>
+                    <td colspan="2" width="20%"  style="text-align: right; color: rgb(0,0,0,0.8);"><h2>Total</h2></td>
+                    <td colspan="2" width="20%" style="text-align: right;">
+                @{
+                    t1 = t1 + 7;
+                } @t1 $
+                    </td>
+                </tr>
+                <tr height = "10%" > <a href="/Home/pay">
+                    <td colspan="5" width="50%"></td>
+                    <td colspan="2" width="20%"></td>
+                    <td colspan="2" width="20%">
+
+
+                        <a href="/"> <button class="ShoppingButton">&ltBack </button></a>
+                        <a href="/Home/pay"><button class="CheckoutButton">Checkout</button></a>
+                    </td>   
+                </tr>
+        
+        
+        </table>
+      
+    
+    </body>
+    </html>
