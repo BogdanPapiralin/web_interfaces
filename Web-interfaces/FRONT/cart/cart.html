@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookFinder</title>
+    <link rel ="stylesheet" href = "cart-style.css">
+</head>
+<body>
+   
+
+        <table>
+            <tr height = "5%" style="">
+              <td colspan="4" width="40%" style="text-align: left;">Product</td>
+              <td width="10%">Quantity</td>
+              <td colspan="2" width="20%">Price</td>
+              <td colspan="1" width="10%">Total</td>
+              <td></td>
+            </tr>
+            <tr height = "15%"  style=""  class="products">
+               
+                    <td width="10%"><img src="book1.jpg" alt=""></td>
+                    <td colspan="3" width="30%"  style="text-align: left;"><li style="color: rgb(9, 159, 197); ">Product name</li>
+                    <li>by <span style="color: rgb(9, 159, 197);"> Brand name </span></li>
+                    <li>Status:<span style="color: rgb(5, 98, 38);">In stock</span></li></td>
+                    <td width="10%"><input type="number" style="width: 30%; height: 20%;" value="1"></td>
+                    <td colspan="2" width="20%" >$4.87</td>
+                    <td width="10%">$14.61</td>
+                    <td colspan = "1" width="20%"><button class = "deleteButton" onclick="removeProduct(0)">Remove</button></td>
+            </tr>
+            <tr></tr>
+            <tr height = "15%" width="100%"   class="products">
+                    <td width="10%"><img src="book1.jpg" alt=""></td>
+                    <td colspan="3" width="30%"  style="text-align: left;"><li style="color: rgb(9, 159, 197); ">Product name</li>
+                    <li>by <span style="color: rgb(9, 159, 197);"> Brand name </span></li>
+                    <li>Status:<span style="color: rgb(5, 98, 38);">In stock</span></li></td>
+                    <td width="10%"><input type="number" style="width: 30%; height: 20%;" value="1"></td>
+                    <td colspan="2" width="20%" >$4.87</td>
+                    <td width="10%">$24.61</td>
+                    <td colspan = "2" width="20%"><button class = "deleteButton" onclick="removeProduct(1)">Remove</button></td>
+            
+            </tr>
+            <tr height = "7%"  style="" >
+                <td colspan="5" width="50%"></td>
+                <td colspan="2" width="20%"  style="text-align: right; color: rgb(0,0,0,0.8);">Subtotal</td>
+                <td colspan="2" width="20%" style="text-align: right;">$24.59</td>
+            </tr>
+            <tr height = "7%" >
+                <td colspan="5" width="50%"></td>
+                <td colspan="2" width="20%"  style="text-align: right; color: rgb(0,0,0,0.8);">Estimated shipping</td>
+                <td colspan="2" width="20%" style="text-align: right;">$6.94</td>
+            </tr>
+            <tr height = "10%">
+                <td colspan="5" width="50%"></td>
+                <td colspan="2" width="20%"  style="text-align: right; color: rgb(0,0,0,0.8);"><h2>Total</h2></td>
+                <td colspan="2" width="20%" style="text-align: right;">$31.53</td>
+            </tr>
+            <tr height = "10%" >
+                <td colspan="5" width="50%"></td>
+                <td colspan = "2" width="20%"></td></td>
+                <td colspan = "2" width="20%">
+                    <a href="../index.html"> <button class = "ShoppingButton">&ltBack </button></a>
+                    <a href="../pay/pay.html"><button class = "CheckoutButton">Checkout</button></a></td></td>
+            </tr>
+          
+
+    </div>
+   
+    <script src="cart-script.js"></script>
+</body>
+</html>
