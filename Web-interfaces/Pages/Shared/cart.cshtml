@@ -71,13 +71,16 @@
         @{
             
         }
+        <tbody class="scrollable">
         @foreach (var p in Model.Orders) {
-            o++;
-            string rsc = "/Image/" + p.BookId + ".jpg";
-            string rscc1 = "removeProduct" + "(" + o + ")";
-            string rscc2 = "/Home/cart/" + @p.OrderId;
+                if (p.Status == 0)
+                {
+                    o++;
+                    string rsc = "/Image/" + p.BookId + ".jpg";
+                    string rscc1 = "removeProduct" + "(" + o + ")";
+                    string rscc2 = "/Home/cart/" + @p.OrderId;
 
-            <tr height = "15%"  style=""  class="products">
+                    <tr height = "15%"  style=""  class="products">
 
                 <td width="10%"><img src=@rsc alt=""></td>
                 <td colspan="3" width="30%" style="text-align: left;">
@@ -106,8 +109,11 @@
                
 
                
-            </tr>
-        }
+            </tr>}
+            }
+            
+        </tbody>
+        
             <tr></tr>
             
                 <tr height = "7%"  style="" >
@@ -122,7 +128,8 @@
                     }
                 }
                         @t1 $
-                    </td>
+                </td>
+       
                 </tr>
                 <tr height = "7%" >
                     <td colspan="5" width="50%"></td>

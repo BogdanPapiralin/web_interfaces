@@ -1,7 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using SQLInfoRetriever;
 using System.Data;
+using System.Net;
 using System.Reflection;
+using System.Reflection.Emit;
+using System.Web.Helpers;
 using Web_interfaces.Data;
 using Web_interfaces.Filters;
 using Web_interfaces.Paging;
@@ -55,7 +60,7 @@ namespace Web_interfaces.Controllers
 
             OrderListViewModel model = new OrderListViewModel();
             BookContext h = new BookContext();
-            List<Order> med = h.Orders.ToList();
+            List<Order> med = DbOrder.SearchStutus(0);
             model.Orders = med;
 
 
@@ -70,7 +75,7 @@ namespace Web_interfaces.Controllers
         {
             OrderListViewModel model = new OrderListViewModel();
             BookContext h = new BookContext();
-            List<Order> med = h.Orders.ToList();
+            List<Order> med = DbOrder.SearchStutus(0);
             model.Orders = med;
 
 
@@ -78,10 +83,84 @@ namespace Web_interfaces.Controllers
         }
         [HttpPost]
 
-        public IActionResult pay(string id)
+        public IActionResult pay(string Namee, string Email1, string City, int ZipCode, string Address, string Comment)
         {
-            return Redirect("/?page=1");
+
+            BookContext h = new BookContext();
+            List<Order> med = DbOrder.SearchStutus(0);
+            if ( Namee != null && Email1 != null && City != null && ZipCode != 0 && Address != null )
+            {
+                  using (SqlConnection connection = new SqlConnection(Retriever.connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("INSERT INTO UserInfo (Name, Email, City, ZipCode, Address, Comment) VALUES (@Name, @Email, @City, @ZipCode, @Address, @Comment)", connection))
+                    {
+                        command.Parameters.AddWithValue("@Name", Namee);
+                        command.Parameters.AddWithValue("@Email", Email1);
+                        command.Parameters.AddWithValue("@City", City);
+                        command.Parameters.AddWithValue("@ZipCode", ZipCode);
+                        command.Parameters.AddWithValue("@Address", Address);
+                        command.Parameters.AddWithValue("@Comment", Comment);
+
+
+
+
+
+                   
+                    }
+
+
+
+                    using (SqlCommand command = new SqlCommand("SELECT * FROM UserInfo ORDER BY UserID DESC", connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int insertedUserID = reader.GetInt32(0);
+                            
+                            
+                                    foreach (Order o in med) {
+                                        using (var context = new BookContext())
+                                        {
+                                            var orderToEdit = context.Orders.Find(o.OrderId);
+                                        Console.WriteLine(orderToEdit.Status);
+                                                orderToEdit.Status =insertedUserID;
+                                                context.SaveChanges();
+                                    }
+                                     }
+
+                            }
+
+                        
+
+
+                        }
+                    }
+
+
+
+
+                    return Redirect("/?page=1");
+                } 
+            }
+            else
+            {
+                OrderListViewModel model = new OrderListViewModel();
+                List<Order> med1 = DbOrder.SearchStutus(0);
+                model.Orders = med1;
+                ViewData["Message"] = "Try again one of the fields is not filled ";
+                Console.WriteLine("Name: " + Namee + " Email: " + Email1 + " City: " + City + " ZipCode: " + ZipCode + " Address: " + Address + " Comment: " + Comment);
+                return View(model);
+            }
+            //Name, Email, City, ZipCode, Address, Comment
+            
         }
+
+
+
+
+
 
         [HttpGet]
         public IActionResult login()

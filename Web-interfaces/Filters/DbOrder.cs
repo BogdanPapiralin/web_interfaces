@@ -18,7 +18,7 @@ namespace Web_interfaces.Filters
                     BookId = books[0].BookId,
                     Quantity = 1,
                     TotalPrice = books[0].Price,
-                    Status = "created",
+                    Status = 0,
                     CreatedAt = DateTime.Now
                 };
                 context.Orders.Add(order);
@@ -54,7 +54,7 @@ namespace Web_interfaces.Filters
                 var books = context.Orders
                     .Where(b => b.BookId == Id && b.UserId == Id2)
                     .ToList();
-                try { books[0] = null; return true; }
+                try { if(books[0].Status == 0) { return true;}else return false; }
                 catch { return false; }
                 
 
@@ -76,6 +76,26 @@ namespace Web_interfaces.Filters
             }
 
         }
+
+
+
+
+
+        public static List<Order> SearchStutus(int stat)
+        {
+            using (var context = new BookContext())
+            {
+
+                var ord = context.Orders
+                    .Where(b => b.Status == stat)
+                    .ToList();
+                return ord;
+
+            }
+
+        }
+
+
         public static void DelOrd(int Id)
         {
             using (var context = new BookContext())
