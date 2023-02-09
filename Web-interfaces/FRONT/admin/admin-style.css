@@ -63,7 +63,7 @@ body{
     border: 1px solid black;
 }
 
-#EditAssortment, #SeeAssortment{
+#EditAssortment, #SeeAssortment, #Notaviablebooks{
     width: 70%;
     background-color: white;
     border-radius: 1em;
@@ -151,13 +151,13 @@ body{
 
 
 
-#EditAssortment li, #SeeAssortment li{   
+#EditAssortment li, #SeeAssortment li, #Notaviablebooks li{   
     list-style: none;
     display: inline-block;
 
 }
 
-#EditAssortment img, #SeeAssortment img{
+#EditAssortment img, #SeeAssortment img, #Notaviablebooks img{
     width: 80%;
 }
 
@@ -208,14 +208,19 @@ body{
     font-size: 2.4em;
 }
 
-#SeeAssortment ul{
+#SeeAssortment ul, #Notaviablebooks ul{
     width: 100%;
 }
-#SeeAssortment li{
+#SeeAssortment li, #Notaviablebooks li{
     width: 10%;
     text-align: left;
 }
-
+#Notaviablebooks ul{
+    border-bottom: 0.1em solid red;
+}
+#Notaviablebooks .booksAssortment li:nth-child(2){
+    background-color: red;
+}
 .admin-panel div{
     display: none;
 }
