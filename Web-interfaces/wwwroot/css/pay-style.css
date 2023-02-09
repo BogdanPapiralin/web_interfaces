@@ -148,10 +148,11 @@ textarea{
 #PayButton:hover{
     background-color: rgb(52, 122, 54);
 }
-.footer{
+.footer {
+    margin-top: 0;
     height: 15%;
     width: 100%;
-    background: linear-gradient(to right, rgb(193,164,132)  10%, rgb(77,47,45));
+    background: linear-gradient(to right, rgb(193,164,132) 10%, rgb(77,47,45));
     position: absolute;
     bottom: -10%;
 }
