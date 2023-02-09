@@ -1,0 +1,157 @@
+body{
+    background-image: url("cart-background.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed; вставил
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header{
+   background: linear-gradient(to right, rgb(77,47,45), 30%, rgb(121,102,87));
+
+
+   margin-top: 0;
+  
+}
+.top-menu img{
+    width: 12%;
+
+}
+.top-menu{
+    margin-left: 5%;
+    width: 50%;
+}
+.header a{
+    text-decoration: none;
+    color: white;
+}
+.header h1{
+    display: inline-block;
+    color: white;
+    margin-left: 1%;
+}
+.header ul{
+    display: inline-block;
+
+
+}
+.registrButtons{
+    margin-left: 3%;
+    width: 20%;
+    text-align: right;
+    display: inline-block;
+}
+.header li{
+    display: inline-block;
+    list-style: none;
+    width: 30%;
+    font-size: 1.3em;
+    color: rgb(255, 255, 255, 0.8);
+}
+#MainPanel, #AddBook{
+    width: 30%;
+    background-color: white;
+    border-radius: 1em;
+    margin: 3% 0% 0% 35%;
+    border-radius: 1em;
+    padding: 1% 0 1% 0%;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+#EditAssortment{
+    width: 70%;
+    background-color: white;
+    border-radius: 1em;
+    margin: 3% 0% 0% 15%;
+    border-radius: 1em;
+    padding: 1% 0 1% 0%;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+
+#MainPanel button{
+    border: 0.1em;
+    border-radius: 0.1em;
+    color: white;
+}
+.AdmButtons{
+    margin-top: 4%;
+    width: 60%; 
+    background-color: rgb(92, 184, 87);
+    font-size: 1.8em;
+}
+#NotaviablebooksButton, #back{
+    margin-top: 4%;
+    background-color: rgb(216, 82, 81);
+    font-size: 1.6em;
+    width: 60%; 
+}
+.AdmButtons:hover{
+    background-color: rgb(57, 99, 55);
+}
+#NotaviablebooksButton:hover, #back:hover, #backAddButton:hover{
+    background-color: rgb(175, 47, 47);
+}
+#back, #save{
+    margin-top: 8%;
+    width: 30%;
+}
+#save{
+    font-size: 1.8em;
+    background-color: rgb(92, 184, 87);
+}
+#MainPanel p{
+    font-size: 1em;
+    text-align: left;
+    margin-left: 3%;
+    margin: 2% 0% 0% 5%;
+}
+#AddBook form{
+    text-align: left;
+    margin-left: 3%;
+    font-size: 1.1em;
+}
+#AddBook input{
+    margin-bottom: 2%;
+    border-radius: 0.5em;
+    padding-left:2%;
+    border: 0.01em solid black;
+    font-size: 1.2em;
+}
+
+#AddBook input[type="text"]{
+    width: 90%;
+}   
+#AddBook input[type="number"]{
+    width: 30%;
+    margin-left: 4%;
+   
+}
+#AddBook h2{
+    text-align: center;
+}
+#backAddButton{
+    margin-top: 4%;
+    width: 60%;
+    background-color: rgb(216, 82, 81);
+    border: 0.1em;
+    border: 0px;
+    border-radius: 0.1em;
+    color: white;
+    font-size: 2em;
+}
+
+.admin-panel div{
+    display: none;
+}
+#MainPanel{
+    display: block;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookFinder</title>
+    <link rel ="stylesheet" href = "admin-style.css">
+   <!-- <link rel ="stylesheet" href = "adaptive.css">-->
+</head>
+<body>
+    <div class = "header">
+        <h1>Book Finder</h1>
+        <ul class = "top-menu">
+            <li><a href = "">Home Page</a></li>
+            <li><a href = "">About us</a></li>
+            <li><a href = "cart/cart.html"> Shopping Cart<img src="shopping_cart.png"></a></li>
+        </ul>
+        <ul class = "registrButtons">
+            <li><a href = "registration/login.html">Login</a></li>
+            <li><a href = "registration/registration.html">Sign Up</a></li>
+        </ul>
+    
+    </div>
+    <div class="admin-panel">
+        <div id="MainPanel">
+            <h2>Main iformation</h2>
+            <p>Different books: 25</p>
+            <p>Total amount of books: 255</p>
+            <p>Books that are not in stock: 4</p>
+            <p>Books sold in last week: 20</p>
+            <button id="AddBookButton" class="AdmButtons" onclick="ChangePanel(1)">Add book</button>
+            <button id="EditAssortmentButton" class="AdmButtons" onclick="ChangePanel(2)">Edit assortment</button>
+            <button id="SeeAssortmentButton" class="AdmButtons" onclick="ChangePanel(3)">See assortment</button>
+            <button id="NotaviablebooksButton" onclick="ChangePanel(4)">Not aviable books</button>
+            <button id="PurchaseHistoryButton" class="AdmButtons" onclick="ChangePanel(5)">Purchase history</button><br>
+            <button id="back">Back</button>
+            <button id="save">Save</button>
+        </div>
+        <div id="AddBook">
+            <form action="">
+                <h2>Add New Book</h2>
+                <label>Enter the book`s title<br></label>
+                    <input type="text">
+                <label><br>Enter the book`s genre<br></label>
+                    <input type="text">
+                <label><br>Enter the book`s author<br></label>
+                    <input type="text">
+                <label><br>Enter the book`s price:</label>
+                    <input type="number" min="0">
+                <label><br>Enter amount of book`s pages:</label>
+                    <input type="number" min="1">
+                <label><br>Enter the year of publication:</label>
+                    <input type="number" max="2023">
+                <label><br>Enter amount of books:</label>
+                    <input type="number" min="0">
+            </form>
+            <button id="backAddButton" function = "" onclick="ChangePanel(0)">Back</button>
+        </div>
+        <div id="EditAssortment">
+            <h2>Edit books assortment</h2>
+        </div>
+    </div>
+    <script src="admin-script.js"></script>
+    </div>
