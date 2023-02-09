@@ -18,7 +18,7 @@ namespace Web_interfaces.Filters
                 books = Search.SearchPrice(books, minprice, maxprice);
                 books = Search.SearchPages(books, minpages, maxpages);
                 books = Search.SearchYear(books, yearss);
-                foreach(Book book in books) { Console.WriteLine(book.Title); }
+                
                 
                 return books;
             }
@@ -98,6 +98,23 @@ namespace Web_interfaces.Filters
                 return books;
            
         }
+
+
+        public static List<Book> Searchid( int Id)
+        {
+            using (var context = new BookContext())
+            {
+                
+                var books = context.Books
+                    .Where(b => b.BookId == Id)
+                    .ToList();
+
+                return books;
+            }
+
+        }
+
+
 
     }
 }

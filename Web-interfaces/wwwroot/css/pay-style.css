@@ -1,0 +1,198 @@
+body{
+    background-image: url("pay-background.jpg");
+    background-size: 100% 109%;
+    height: 640px;
+
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+   background: linear-gradient(to right, rgb(77,47,45), 30%, rgb(121,102,87));
+   width: 100%;
+   height: 12%;
+   margin-top: 0;
+  
+}
+.top-menu img{
+    width: 12%;
+
+}
+.header a{
+    text-decoration: none;
+    color: white;
+}
+.header h1{
+    display: inline-block;
+    color: white;
+    margin-left: 1%;
+}
+.header ul{
+    display: inline-block;
+
+}
+.header li{
+    display: inline-block;
+    list-style: none;
+    width: 30%;
+    font-size: 1.3em;
+    color: rgb(255, 255, 255, 0.8);
+}
+.registrButtons{
+    margin-left: 3%;
+    width: 20%;
+    text-align: right;
+    display: inline-block;
+}
+.top-menu{
+    margin-left: 5%;
+    width: 50%;
+    
+}
+.title{
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+.title h1{
+    margin: 0;
+}
+
+.header li:hover{
+    color: rgb(255, 255, 255, 1);
+}
+
+
+#UserInfoForm{
+    margin-top: 4%;
+    margin-left: 4%;
+    background-color: white;
+    display: inline-block;
+    margin-bottom: 5%;
+    width: 56%;
+    height: 50%;
+    padding-top: 2%;
+    color: rgb(0,0,0,0.6);
+}
+
+#UserInfoForm input{
+    border: 0.01em solid rgb(61, 61, 61);
+    margin-bottom: 3%;
+    padding-left:2%;
+    width: 100%;
+    height: 10%;
+    font-size: 1.5em;
+    border-radius: 0.1em;
+
+    display: inline-block;
+
+}
+label{
+
+    margin-left: 5%;
+    display: inline-block;
+}
+textarea{
+    width: 50%;
+    margin-left: 5%;
+}
+
+#CartSummary{
+    margin-left: 4%;
+    margin-top: 4%; 
+    display: inline-block;
+    width: 35%;
+    height: 50%;  
+    vertical-align: top;
+}
+
+.SummaryInfo{
+    width: 100%;
+    height: 80%;
+    padding-top: 1%;
+    background-color: white;
+}
+
+.SummaryInfo h2{ 
+    text-align: center;
+}
+.totalInfo{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    list-style: none;
+    font-weight: bold;
+}
+
+.GiftPromoButton{
+    margin-left: 10%;
+    height: 10%;
+    background-color: white;
+    border: 0.1em solid rgb(0, 0, 0, 0.3);
+    width: 80%;
+    margin-top: 3%;
+}
+#PayButton{
+    width: 98%;
+    height: 15%;
+    background-color: rgb(71,196,76);
+    border: 1px;
+    margin-top: 2%;
+    margin-left: 1%;
+    text-align: center;
+    color: black;
+    font-size: 1.2em;
+    font-weight:500;
+}
+#PayButton:hover{
+    background-color: rgb(52, 122, 54);
+}
+.footer {
+    margin-top: 0;
+    height: 15%;
+    width: 100%;
+    background: linear-gradient(to right, rgb(193,164,132) 10%, rgb(77,47,45));
+    position: absolute;
+    bottom: -10%;
+}
+.footer img{
+    height: 90%;
+    display: inline-block;
+    margin-left: 5%;
+    
+}
+.down-menu{
+    display: inline-block;
+    list-style: none;
+    color: rgb(255,255,255,0.8);
+    font-size: 1em;
+    vertical-align: top;
+    margin-top: 2%;
+}
+.down-menu li{
+    border-left:solid 0.01em #e5e5e5;
+    padding-left: 0.5em;
+}
+.footer p{
+    display: inline-block;
+    color: white;
+    vertical-align: top;
+    margin-top: 4%;
+    font-size: 1.3em;
+    margin-left: 10%;
+}
+.down-info{
+    display: inline-block;
+    list-style: none;
+    color: white;
+    font-size: 1em;
+    vertical-align: top;
+
+    margin-left: 10%;
+    height: 10%;
+}
+.down-info li{
+    margin-top: 3%;
+}
+

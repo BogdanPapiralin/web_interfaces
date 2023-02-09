@@ -23,7 +23,9 @@ namespace Web_interfaces.Paging
             for (int i = 1; i <= pagingInfo.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
+               
                 tag.MergeAttribute("href", pageUrl(i));
+             
                 tag.InnerHtml = i.ToString();
                 if (i == pagingInfo.CurrentPage)
                 {
@@ -36,4 +38,5 @@ namespace Web_interfaces.Paging
             return new HtmlString(result.ToString());
         }
     }
+    
 }
