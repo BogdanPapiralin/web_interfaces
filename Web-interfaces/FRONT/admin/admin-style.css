@@ -63,7 +63,7 @@ body{
     border: 1px solid black;
 }
 
-#EditAssortment, #SeeAssortment, #Notaviablebooks{
+#EditAssortment, #SeeAssortment, #Notaviablebooks, #PurchaseHistory{
     width: 70%;
     background-color: white;
     border-radius: 1em;
@@ -151,7 +151,7 @@ body{
 
 
 
-#EditAssortment li, #SeeAssortment li, #Notaviablebooks li{   
+#EditAssortment li, #SeeAssortment li, #Notaviablebooks li, #PurchaseHistory li{   
     list-style: none;
     display: inline-block;
 
@@ -221,6 +221,15 @@ body{
 #Notaviablebooks .booksAssortment li:nth-child(2){
     background-color: red;
 }
+
+#PurchaseHistory .assortmentTitle{
+   width: 100%;
+}
+#PurchaseHistory li{
+    width: 10%;
+    text-align: center;
+}
+
 .admin-panel div{
     display: none;
 }
