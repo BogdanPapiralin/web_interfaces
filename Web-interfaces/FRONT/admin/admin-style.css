@@ -7,7 +7,13 @@ body{
     padding: 0;
 }
 
-
+.admin-panel div{
+    display: none;
+}
+#MainPanel{
+    display: block;
+   
+}
 .header{
    background: linear-gradient(to right, rgb(77,47,45), 30%, rgb(121,102,87));
 
@@ -50,11 +56,12 @@ body{
     font-size: 1.3em;
     color: rgb(255, 255, 255, 0.8);
 }
+
 #MainPanel, #AddBook{
     width: 30%;
     background-color: white;
     border-radius: 1em;
-    margin: 3% 0% 0% 35%;
+    margin: 3% 0% 3% 35%;
     border-radius: 1em;
     padding: 1% 0 1% 0%;
     border-collapse: collapse;
@@ -67,7 +74,7 @@ body{
     width: 70%;
     background-color: white;
     border-radius: 1em;
-    margin: 3% 0% 0% 15%;
+    margin: 3% 0% 3% 15%;
     border-radius: 1em;
     padding: 1% 0 1% 0%;
     border-collapse: collapse;
@@ -230,10 +237,50 @@ body{
     text-align: center;
 }
 
-.admin-panel div{
-    display: none;
+
+
+
+.footer{
+    height: 15%;
+    width: 100%;
+    background: linear-gradient(to right, rgb(193,164,132)  10%, rgb(77,47,45));
 }
-#MainPanel{
-    display: block;
-   
+.footer img{
+    width: 8%;
+    display: inline-block;
+    margin-left: 5%;
+    
+}
+.down-menu{
+    display: inline-block;
+    list-style: none;
+    color: rgb(255,255,255,0.8);
+    font-size: 1em;
+    vertical-align: top;
+    margin-top: 2%;
+}
+.down-menu li{
+    border-left:solid 0.01em #e5e5e5;
+    padding-left: 0.5em;
+}
+.footer p{
+    display: inline-block;
+    color: white;
+    vertical-align: top;
+    margin-top: 4%;
+    font-size: 1.3em;
+    margin-left: 10%;
+}
+.down-info{
+    display: inline-block;
+    list-style: none;
+    color: white;
+    font-size: 1em;
+    vertical-align: top;
+
+    margin-left: 10%;
+    height: 10%;
+}
+.down-info li{
+    margin-top: 3%;
 }
